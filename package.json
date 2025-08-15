@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel:login": "vercel login",
+    "vercel": "vercel",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@react-three/fiber": "^9.3.0",
@@ -37,6 +40,7 @@
     "tailwindcss": "^4.1.12",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
+    "vercel": "^45.0.9",
     "vite": "^7.1.2"
   }
 }
