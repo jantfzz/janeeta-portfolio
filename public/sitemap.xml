@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://janeeta-portfolio.vercel.app/</loc>
+    <loc>https://janeeta.is-a.dev/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://janeeta-portfolio.vercel.app/portfolio</loc>
+    <loc>https://janeeta.is-a.dev/portfolio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://janeeta-portfolio.vercel.app/research</loc>
+    <loc>https://janeeta.is-a.dev/research</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://janeeta-portfolio.vercel.app/contact</loc>
+    <loc>https://janeeta.is-a.dev/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
