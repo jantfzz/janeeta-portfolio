@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Theme variables and utility extensions */
+:root {
+  --color-navy: #1a1a2e;
+  --color-gold: #f7d794;
+  --color-charcoal: #2c3e50;
+  --color-accent-blue: #4a90e2;
+  --color-success: #2ecc71;
+  --color-deep-space: #0B1426;
+  --color-electric-gold: #FFD700;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-[#2c3e50] antialiased;
+}
+
+.gradient-animated {
+  background: linear-gradient(135deg, var(--color-deep-space) 0%, #6366F1 35%, #06B6D4 65%, var(--color-electric-gold) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gold-text {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-electric-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.6);
+}
