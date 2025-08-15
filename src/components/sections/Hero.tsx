@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { Particles } from '../common/Particles'
+import { MagneticButton } from '../ui/MagneticButton'
 import { useParallaxEffect } from '../../hooks/useParallaxEffect'
 import { useTypewriter } from '../../hooks/useTypewriter'
 import { AnimatedCounter } from '../ui/AnimatedCounter'
@@ -13,6 +15,7 @@ export function Hero() {
 				<div className="absolute -left-20 top-24 size-[380px] rounded-full bg-white/5 blur-3xl" />
 				<div className="absolute -right-16 bottom-16 size-[320px] rounded-full bg-[#FFD700]/20 blur-3xl" />
 			</div>
+			<Particles />
 			<div className="relative mx-auto max-w-6xl px-6 py-24">
 				<motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-sm tracking-widest uppercase text-zinc-200">Bandung, Indonesia</motion.p>
 				<motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="mt-4 text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-tight">
@@ -23,7 +26,7 @@ export function Hero() {
 				</motion.p>
 				<div className="mt-8 flex flex-wrap gap-4">
 					<Link to="/portfolio" className="rounded-full bg-white/10 px-5 py-3 text-white hover:bg-white/20 transition">View Work</Link>
-					<Link to="/contact" className="rounded-full bg-[#FFD700] text-black px-5 py-3 hover:brightness-95 transition">Contact</Link>
+					<MagneticButton href="/contact">Contact</MagneticButton>
 				</div>
 				<div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-6 text-black">
 					<div className="glass rounded-xl p-4 text-center">

@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+// page transitions placeholder available via AnimatePresence in main.tsx
 import { Layout } from './components/layout/Layout'
 
 function App() {
