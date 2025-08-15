@@ -1,5 +1,6 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import gsap from 'gsap'
 
 type ExperienceItem = {
 	role: string
@@ -16,13 +17,20 @@ const ITEMS: ExperienceItem[] = [
 ]
 
 export function Experience() {
+	const scope = useRef<HTMLDivElement | null>(null)
+	useEffect(() => {
+		if (!scope.current) return
+		const els = scope.current.querySelectorAll('[data-exp-card]')
+		gsap.from(els, { opacity: 0, y: 24, duration: 0.6, stagger: 0.12, ease: 'power2.out' })
+		return () => { gsap.killTweensOf(els) }
+	}, [])
 	return (
-		<section className="mx-auto max-w-6xl px-6 py-20">
+		<section className="mx-auto max-w-6xl px-6 py-20" ref={scope}>
 			<h2 className="font-heading text-3xl md:text-4xl text-[#1a1a2e]">Experience</h2>
 			<div className="mt-8 grid gap-6 sm:grid-cols-2">
 				{ITEMS.map((item) => (
 					<TiltCard key={item.role}>
-						<motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-soft">
+						<motion.div data-exp-card initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-soft">
 							<div className="text-sm text-[#4a90e2]">{item.org} • {item.period}</div>
 							<div className="mt-1 text-lg font-semibold text-[#1a1a2e]">{item.role}</div>
 							<ul className="mt-3 text-sm text-[#2c3e50]/80 list-disc pl-5 space-y-1">
