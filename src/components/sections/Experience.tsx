@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
+import { GlowingCard } from '../ui/GlowingCard'
 
 type ExperienceItem = {
 	role: string
@@ -30,13 +31,15 @@ export function Experience() {
 			<div className="mt-8 grid gap-6 sm:grid-cols-2">
 				{ITEMS.map((item) => (
 					<TiltCard key={item.role}>
-						<motion.div data-exp-card initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-soft">
+						<GlowingCard>
+							<motion.div data-exp-card initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
 							<div className="text-sm text-[#4a90e2]">{item.org} • {item.period}</div>
 							<div className="mt-1 text-lg font-semibold text-[#1a1a2e]">{item.role}</div>
 							<ul className="mt-3 text-sm text-[#2c3e50]/80 list-disc pl-5 space-y-1">
 								{item.metrics.map(m => <li key={m}>{m}</li>)}
 							</ul>
-						</motion.div>
+							</motion.div>
+						</GlowingCard>
 					</TiltCard>
 				))}
 			</div>
